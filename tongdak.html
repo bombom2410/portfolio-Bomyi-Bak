@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #d1d3ca;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black;
+            text-align: center;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1; 
+        }
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            z-index: 2; 
+        }
+        .arrow-button {
+            position: absolute;
+            top: 50%; 
+            transform: translateY(-50%); 
+            width: 50px; 
+            height: auto;
+            cursor: pointer;
+            right: 80px;
+            z-index: 2; 
+        }
+        .image-container {
+            position: relative; 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button"><img src="./img/home2.png" alt="Home"></a>
+    <div class="image-container">
+        <img id="main-image" src="./img/gudorotongdak.jpg" alt="gudoro tongdak">
+        <img id="arrow-button" src="./img/arrow.png" alt="Arrow" class="arrow-button" onclick="nextImage()">
+    </div>   
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            "./img/gudorotongdak.jpg",
+            "./img/gudorotongdak2.jpg" 
+        ];
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; 
+            document.getElementById("main-image").src = images[currentImageIndex]; 
+            
+            const arrowButton = document.getElementById("arrow-button");
+            if (currentImageIndex === 0) {
+                arrowButton.style.right = '80px';
+                arrowButton.style.left = 'auto';
+                arrowButton.style.transform = 'translateY(-50%) rotate(0)'; 
+            } else {
+                arrowButton.style.left = '80px'; 
+                arrowButton.style.right = 'auto'; 
+                arrowButton.style.transform = 'translateY(-50%) rotate(180deg)'; 
+            }
+        }
+    </script>
+</body>
+</html>
