@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d1d3ca;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            font-size: 10vw; 
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            transition: color 0.5s; 
+        }
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: black;
+            text-decoration: none;
+        }
+        .top-section, .bottom-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-evenly;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(51, 51, 51, 0.7);
+            margin-top: 20px;
+        }
+        .work-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            flex: 1 1 30%; 
+            min-width: 150px; 
+        }
+        .work-link:hover {
+            background-color: rgba(51, 51, 51, 0.1);
+            color: #000;
+        }
+        .email-section {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: white;
+        }
+        .email-icon {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) { 
+            h1 {
+                font-size: 5rem; 
+            }
+            .top-section, .bottom-section {
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .work-link {
+                flex: 1 1 auto; 
+                margin: 5px 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button"><img src="./img/home.png" alt="홈 버튼"></a>
+    <div class="top-section">
+        <a href="the_maison.html" class="work-link">The Maison</a>
+        <a href="wordandmaster.html" class="work-link">Word&Master</a>
+        <a href="fireworksfestival.html" class="work-link">Fireworks Festival</a>
+    </div>
+    <div class="middle-section">
+        <h1 id="portfolio-title" onmouseover="hoverTitle()" onmouseout="resetTitle()">Portfolio</h1>
+        <div class="email-section">
+            <span class="email-icon"><img src="./img/mail.png" alt=""></span>
+            <span>bomyi2410@gmail.com</span>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <a href="interstellar.html" class="work-link">Interstellar</a>
+        <a href="sensodyne.html" class="work-link">Sensodyne</a>
+        <a href="detail7.html" class="work-link">Gudoro</a>
+    </div>
+
+    <script>
+        function hoverTitle() {
+            const titleElement = document.getElementById("portfolio-title");
+            titleElement.style.color = "#55694b";
+            titleElement.innerText = "Bomyi Bak"; 
+        }
+
+        function resetTitle() {
+            const titleElement = document.getElementById("portfolio-title");
+            titleElement.style.color = "white"; 
+            titleElement.innerText = "Portfolio";
+        }
+    </script>
+</body>
+</html>
