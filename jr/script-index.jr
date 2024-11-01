@@ -1,0 +1,11 @@
+        function hoverTitle() {
+            const titleElement = document.getElementById("portfolio-title");
+            titleElement.style.color = "#55694b";
+            titleElement.innerText = "Bomyi Bak"; 
+        }
+
+        function resetTitle() {
+            const titleElement = document.getElementById("portfolio-title");
+            titleElement.style.color = "white"; 
+            titleElement.innerText = "Portfolio";
+        }
